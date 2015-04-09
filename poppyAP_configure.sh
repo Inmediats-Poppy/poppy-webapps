@@ -1,6 +1,15 @@
 #! /bin/bash
 # Installing and configuring Poppy as an Wifi Access Point
-WLAN=ifconfig | grep wlan | cut -c -6
+
+sudo apt-get install git
+
+git clone poppy-webapps.git
+cd poppy-webapps/conf/
+
+# Creating variable for Wlan inerface
+export WLANINT=$(ifconfig | grep wlan | cut -c -6)
+# configuring with Wlan variable
+sed -i -e "s/wlan2/$WLANINT/g" *
 
 
 # installating software
@@ -8,21 +17,18 @@ sudo apt-get update
 sudo apt-get install hostapd dnsmasq
 
 #configure interfaces
-#wget https://raw.githubusercontent.com/Inmediats-Poppy/poppy_install/master/poppyAP/interfaces
 sudo cp /etc/network/interfaces /etc/network/interfaces.BAK
 sudo mv interfaces /etc/network/interfaces 
 
 # Changing NetworkManager configuration
-#wget https://raw.githubusercontent.com/Inmediats-Poppy/poppy_install/master/poppyAP/NetworkManager.conf
 sudo cp /etc/NetworManager/NetworManager.conf /etc/NetworManager/NetworManager.conf.BAK
 sudo mv NetworManager.conf /etc/NetworManager/NetworManager.conf
 sudo nmcli nm wifi off
 sudo rfkill unblock wlan
-sudo ifdown ${WLAN}
-sudo ifup ${WLAN}
+sudo ifdown ${WLANINT}
+sudo ifup ${WLANINT}
 
 #configure hostapd
-#wget https://raw.githubusercontent.com/Inmediats-Poppy/poppy_install/master/poppyAP/hostpad.conf
 sudo /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.BAK
 sudo mv hostpad.conf /etc/hostapd/hostapd.conf
 
@@ -37,7 +43,6 @@ sudo service hostapd start
 
 
 #configure dnsmasq
-wget https://raw.githubusercontent.com/Inmediats-Poppy/poppy_install/master/poppyAP/dnsmasq.conf
 sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.BAK
 sudo mv dnsmasq.conf /etc/dnsmasq.conf 
 sudo service dnsmasq

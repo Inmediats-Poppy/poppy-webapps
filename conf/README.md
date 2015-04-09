@@ -10,7 +10,7 @@ It's taylor made for :
 
 What it does :
 - It installs hostapd and dnsmasq 
-- It changes your network configuration for the wlan2 interface.
+- It changes your network configuration for the WLANINT interface.
 
 
 You can download and run it :
