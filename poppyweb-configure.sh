@@ -12,3 +12,5 @@ sudo mv www/html/ /var/www/html/
 git clone snap.git
 sudo mv snap/ /var/www/html/
 
+# mv snap blocks
+sudo mv conf/pypot-basic-snap-blocks.xml /var/www/html/snap/Examples/
