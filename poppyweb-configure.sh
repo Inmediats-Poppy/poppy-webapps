@@ -9,4 +9,6 @@ sudo mv /var/www/web/ /var/www/html/wificonfig/
 sudo mv www/html/ /var/www/html/
 
 #mv snap
+git clone snap.git
+sudo mv snap/ /var/www/html/
 
