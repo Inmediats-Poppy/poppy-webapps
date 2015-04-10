@@ -5,7 +5,8 @@ sudo a2ensite 000-default.conf
 sudo /etc/init.d/apache2 restart
 sudo mv /var/www/web/ /var/www/html/wificonfig/
  
-# modifying index.html
-#git clone snap
+# Moving WWW/
+sudo mv www/html/ /var/www/html/
+
 #mv snap
 
