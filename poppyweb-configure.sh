@@ -1,3 +1,6 @@
+#! /bin/bash
+# Configuring apache and moving files to /var/www/
+
 
 # Cleaning apache2 config
 sudo mv /etc/apache2/sites-enabled/000-default.conf /etc/apache2/sites-enabled/wificonfig.conf
