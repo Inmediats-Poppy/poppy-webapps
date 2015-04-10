@@ -1,10 +1,6 @@
 #! /bin/bash
 # Installing and configuring Poppy as an Wifi Access Point
 
-sudo apt-get install git
-
-git clone poppy-webapps.git
-cd poppy-webapps/conf/
 
 # Creating variable for Wlan inerface
 export WLANINT=$(ifconfig | grep wlan | cut -c -6)
