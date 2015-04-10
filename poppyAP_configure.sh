@@ -5,7 +5,7 @@
 # Creating variable for Wlan inerface
 export WLANINT=$(ifconfig | grep wlan | cut -c -6)
 # configuring with Wlan variable
-sed -i -e "s/wlan2/$WLANINT/g" *
+sed -i -e "s/WLANINT/$WLANINT/g" *
 
 
 # installating software
