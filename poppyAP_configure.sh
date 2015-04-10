@@ -14,11 +14,11 @@ sudo apt-get install hostapd dnsmasq
 
 #configure interfaces
 sudo cp /etc/network/interfaces /etc/network/interfaces.BAK
-sudo mv interfaces /etc/network/interfaces 
+sudo mv conf/interfaces /etc/network/interfaces 
 
 # Changing NetworkManager configuration
 sudo cp /etc/NetworManager/NetworManager.conf /etc/NetworManager/NetworManager.conf.BAK
-sudo mv NetworManager.conf /etc/NetworManager/NetworManager.conf
+sudo mv conf/iNetworManager.conf /etc/NetworManager/NetworManager.conf
 sudo nmcli nm wifi off
 sudo rfkill unblock wlan
 sudo ifdown ${WLANINT}
@@ -26,7 +26,7 @@ sudo ifup ${WLANINT}
 
 #configure hostapd
 sudo /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.BAK
-sudo mv hostpad.conf /etc/hostapd/hostapd.conf
+sudo mv conf/ihostpad.conf /etc/hostapd/hostapd.conf
 
 # adafruit hack to make driver rtl871xdrv working with hostapd
 wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
@@ -40,7 +40,7 @@ sudo service hostapd start
 
 #configure dnsmasq
 sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.BAK
-sudo mv dnsmasq.conf /etc/dnsmasq.conf 
+sudo mv conf/idnsmasq.conf /etc/dnsmasq.conf 
 sudo service dnsmasq
 
 # Starting daemons
