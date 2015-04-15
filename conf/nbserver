@@ -1,7 +1,7 @@
 #! /bin/sh -e
 
 DAEMON="/home/poppy/.pyenv/shims/ipython" 
-daemon_OPT="notebook notebook /home/poppy/notebooks/sample/ --profile=nbserver"
+daemon_OPT="notebook /home/poppy/notebooks/ --profile=nbserver"
 DAEMONUSER="poppy" 
 daemon_NAME="nbserver" 
 
