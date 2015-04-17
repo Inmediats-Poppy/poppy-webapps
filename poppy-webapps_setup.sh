@@ -5,7 +5,7 @@
 sudo apt-get install git
 git clone https://github.com/Inmediats-Poppy/poppy-webapps.git
 cd poppy-webapps/
-sh ./nbserver_configure.sh
-sh ./poppyweb_configure.sh
-sh ./poppyAP_configure.sh
+sudo sh ./nbserver_configure.sh
+sudo sh ./poppyweb_configure.sh
+sudo sh ./poppyAP_configure.sh
 
