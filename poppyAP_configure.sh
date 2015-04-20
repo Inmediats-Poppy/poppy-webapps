@@ -4,9 +4,9 @@ set -x
 trap read debug
 
 # Creating variable for Wlan inerface
-#export WLANINT=$(ifconfig | grep wlan | cut -c -6)
+export WLANINT=WLANINT # $(nmcli d | grep wlan | cut -c -5)
 # configuring with Wlan variable
-#sed -i -e "s/WLANINT/$WLANINT/g" *
+sed -i -e "s/WLANINT/$WLANINT/g" conf/*
 
 
 # installating software
