@@ -1,6 +1,8 @@
 Installing and configuring Poppy webapps
 
-It aims to complete installation on Odroid using the poppy_install script
+It aims to complete installation on Odroid using the poppy_install script (still in debugging)
+
+Debugging informations : https://mensuel.framapad.org/p/log-poppy
 
 To install it you can (choose one of this method) :
 - Execute the following line :
