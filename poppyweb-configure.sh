@@ -10,12 +10,12 @@ sudo /etc/init.d/apache2 restart
 sudo mv /var/www/web /var/www/html/wificonfig
  
 # Moving WWW/
-sudo mv www/html/ /var/www/
+sudo cp www/html/* /var/www/html/
 
 #mv snap
 git clone https://github.com/jmoenig/Snap--Build-Your-Own-Blocks.git
 mv Snap--Build-Your-Own-Blocks snap
-sudo mv snap /var/www/html/
+sudo cp snap/ /var/www/html/snap/
 
 # mv snap blocks
-sudo mv conf/pypot-basic-snap-blocks.xml /var/www/html/snap/Examples/
+sudo cp conf/pypot-basic-snap-blocks.xml /var/www/html/snap/Examples/
