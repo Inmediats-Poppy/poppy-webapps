@@ -1,6 +1,8 @@
 #! /bin/bash
 # Installing poppy-webapps using several script
 # You can also executing each script seperately
+set -x
+trap read debug
 
 sudo apt-get install git
 git clone https://github.com/Inmediats-Poppy/poppy-webapps.git

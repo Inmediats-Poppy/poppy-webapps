@@ -1,4 +1,6 @@
 #! /bin/bash
+set -x
+trap read debug
 
 # Create a new profile
 ipython profile create nbserver
