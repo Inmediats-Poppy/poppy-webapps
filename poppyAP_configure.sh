@@ -18,12 +18,12 @@ sudo cp /etc/network/interfaces /etc/network/interfaces.BAK
 sudo mv conf/interfaces /etc/network/interfaces 
 
 # Changing NetworkManager configuration
-sudo cp /etc/NetworkManager/NetworkManager.conf /etc/NetworManager/NetworManager.conf.BAK
-sudo mv conf/iNetworkManager.conf /etc/NetworkManager/NetworManager.conf
+sudo cp /etc/NetworkManager/NetworkManager.conf /etc/NetworkManager/NetworManager.conf.BAK
+sudo mv conf/NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 sudo nmcli nm wifi off
 sudo rfkill unblock wlan
-sudo ifdown wlan2 #${WLANINT}
-sudo ifup wlan2 #${WLANINT}
+sudo ifdown ${WLANINT}
+sudo ifup ${WLANINT}
 
 #configure hostapd
 sudo /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.BAK

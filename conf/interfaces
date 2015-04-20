@@ -11,7 +11,7 @@ iface lo inet loopback
 #wpa-psk "radacina"
 
 # Comment these lines you DONT want an AP and sudo nmcli nm wifi on
-allow-hotplug wlan2
-iface wlan2 inet static
+allow-hotplug WLANINT
+iface WLANINT inet static
 address 192.168.42.1
 netmask 255.255.255.0
