@@ -28,7 +28,8 @@ sudo ifup ${WLANINT}
 #configure hostapd
 sudo /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.BAK
 sudo mv conf/hostpad.conf /etc/hostapd/hostapd.conf
-#modify /etc/default/hostapd DAEMON_CONF="/etc/hostapd/hostapd.conf"
+#modify /etc/default/hostapd with DAEMON_CONF="/etc/hostapd/hostapd.conf"
+sudo echo DAEMON_CONF="/etc/hostapd/hostapd.conf" >> /etc/default/hostapd
 
 # adafruit hack to make driver rtl871xdrv working with hostapd
 wget http://adafruit-download.s3.amazonaws.com/adafruit_hostapd_14128.zip
