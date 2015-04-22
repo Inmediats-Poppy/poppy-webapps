@@ -43,9 +43,9 @@ sudo service hostapd start
 
 #configure dnsmasq
 sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.BAK
-sudo mv conf/idnsmasq.conf /etc/dnsmasq.conf 
+sudo mv conf/dnsmasq.conf /etc/dnsmasq.conf 
 sudo service dnsmasq
 
 # Starting daemons
-sudo /etc.init.d/hostapd start
-sudo /etc.init.d/dnmasq start
+sudo /etc/init.d/hostapd start
+sudo /etc/init.d/dnmasq start
