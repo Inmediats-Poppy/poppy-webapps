@@ -4,7 +4,7 @@ set -x
 trap read debug
 
 # Creating variable for Wlan inerface
-export WLANINT=WLANINT # $(nmcli d | grep wlan | cut -c -5)
+export WLANINT=$(nmcli d | grep wlan | cut -c -5)
 # configuring with Wlan variable
 sed -i -e "s/WLANINT/$WLANINT/g" conf/*
 
@@ -26,8 +26,8 @@ sudo ifdown ${WLANINT}
 sudo ifup ${WLANINT}
 
 #configure hostapd
-sudo /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.BAK
-sudo mv conf/hostpad.conf /etc/hostapd/hostapd.conf
+#sudo /etc/hostapd/hostapd.conf /etc/hostapd/hostapd.conf.BAK
+sudo mv conf/hostapd.conf /etc/hostapd/hostapd.conf
 #modify /etc/default/hostapd with DAEMON_CONF="/etc/hostapd/hostapd.conf"
 sudo echo DAEMON_CONF="/etc/hostapd/hostapd.conf" >> /etc/default/hostapd
 
@@ -48,4 +48,4 @@ sudo service dnsmasq
 
 # Starting daemons
 sudo /etc/init.d/hostapd start
-sudo /etc/init.d/dnmasq start
+sudo /etc/init.d/dnsmasq start
